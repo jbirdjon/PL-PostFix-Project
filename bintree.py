@@ -29,7 +29,7 @@ def string2file(string,fname) :
 
 file1 = open('postfix.txt',"w")
 
-for t in bin(3): 
+for t in bin(3):
     file1.write(str(t)+"\n")
     print(str(t))
 createtree()
