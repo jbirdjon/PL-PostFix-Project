@@ -1,10 +1,10 @@
+
 def bin(n):
     file1 = open('postfix.txt', "w")#open file
 
     if n==0:
         file1.write('o')
         yield 'o'
-
     else:
         for k in range(0,n):
             for l in bin(k):
@@ -29,6 +29,7 @@ def string2file(string,fname) :
     with open(fname,'w') as g:
         g.write(string)
 
+file1 = open('postfix.txt',"w")
 
-bin(4)
+for t in bin(3): file1.write(str(t)+"\n")
 createtree()
