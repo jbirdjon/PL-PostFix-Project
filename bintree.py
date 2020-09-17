@@ -13,7 +13,7 @@ def bin(n):
 
 file1 = open('postfix.txt',"w")
 
-for t in bin(2):
+for t in bin(3):
 
     postfix = ""
     for element in str(t):
@@ -23,18 +23,21 @@ for t in bin(2):
             postfix = postfix + ','
 
     file1.write(postfix+"\n")
+    print(t)
 file1.close()
 f = open("postfix.txt","r")
 for line in f.readlines():
     stack = []
+    stack2 = []
+    combo =""
     if line != '':
         for character in line:
-            print(character)
-            if character != '\n':
-                stack.append(character)
-            if character == ',':
-                print("Top of stack")
-                print(stack.pop())
-    print(stack)
-
+            if character != '\n' and character !=',':
+                stack.insert(0,character)
+            elif character == ',':
+                combo = "("+stack.pop()+","+stack.pop()+")"
+                stack.insert(0,combo)
+        print(line)
+        print(stack)
+   # print(stack.pop())
 f.close()

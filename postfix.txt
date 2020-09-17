@@ -1,2 +1,5 @@
-ooo,,
-oo,o,
+oooo,,,
+ooo,o,,
+oo,oo,,
+ooo,,o,
+oo,o,o,
