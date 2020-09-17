@@ -23,7 +23,7 @@ for t in bin(3):
             postfix = postfix + ','
 
     file1.write(postfix+"\n")
-    print(t)
+    print(str(t)+"\t"+postfix)
 file1.close()
 f = open("postfix.txt","r")
 for line in f.readlines():
@@ -33,11 +33,10 @@ for line in f.readlines():
     if line != '':
         for character in line:
             if character != '\n' and character !=',':
-                stack.insert(0,character)
+                stack.append(character)
             elif character == ',':
-                combo = "("+stack.pop()+","+stack.pop()+")"
-                stack.insert(0,combo)
-        print(line)
-        print(stack)
-   # print(stack.pop())
+                pos=stack.pop()
+                pos2=stack.pop()
+                stack.append("("+pos2+","+pos+")")
+    print(str(stack)+"\t"+line)
 f.close()
