@@ -11,7 +11,7 @@ def bin(n):
 file1 = open('postfix.txt',"w")
 
 #Writing to file
-for t in bin(3):
+for t in bin(10):
 
     postfix = ""
     for element in str(t):
